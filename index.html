@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Driven Interactive Bubble</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h3>Audio Driven Interactive Bubble</h3>
+            <p>
+                Click to allow microphone access to start!   
+                <button id="start-button" class="btn btn-sm btn-outline-secondary" onclick="userStartAudio()">Start Audio</button>
+            </p>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="canvas-container">
+                    <div id="loading-message">Waiting for canvas to set up...</div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="sidebar">
+                    <h5>Settings</h5>
+                    <div class="mb-3">
+                        <label class="form-label">Demo </label>
+                        <div class="btn-group btn-group-sm" id="modeSelection">
+                            <button type="button" class="btn btn-outline-secondary" data-mode="metal">Luminous</button>
+                            <button type="button" class="btn btn-outline-secondary active" data-mode="disco">Disco</button>
+                            <button type="button" class="btn btn-outline-secondary" data-mode="water">Ripples</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Background </label>
+                        <div class="btn-group btn-group-sm" id="backgroundSelection">
+                            <button type="button" class="btn btn-outline-secondary active" data-bg="d">Dark</button>
+                            <button type="button" class="btn btn-outline-secondary" data-bg="l">Light</button>
+                            <button type="button" class="btn btn-outline-secondary" data-bg="v">Camera</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Transparency </label>
+                        <input type="range" class="form-range" id="transparencySlider" min="0.00" max="1.00" step="0.01" value="0.25">
+                        <span id="transparencyValue"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Iridescence </label>
+                        <input type="range" class="form-range" id="iridescenceSlider" min="0.00" max="1.00" step="0.01" value="0.50">
+                        <span id="iridescenceValue"></span>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="videoReflectionSwitch" checked>
+                            <label class="form-check-label" for="videoReflectionSwitch"> Reflection </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="sketch.js"></script>
+</body>
+</html>
+
+
